@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useQuery } from "react-query";
 import { PicturesContext } from "../context/PicturesContext";
 
@@ -20,23 +20,23 @@ export const Search = () => {
 		{ enabled: false }
 	);
 	const { setPictures } = useContext(PicturesContext);
-	if (!isIdle && !isLoading) {
-		const result = data.hits;
-		setPictures(result);
-	}
+
+	useEffect(() => {
+		if (!isIdle && !isLoading) setPictures(data.hits);
+	}, [isLoading]);
 
 	return (
-		<div>
+		<div className="md:flex mt-10 justify-center">
 			<input
 				className="bg-white focus:outline-none focus:shadow-outline 
-        border border-gray-300 rounded-lg py-2 px-4 block w-7/12 appearance-none leading-normal mx-auto mt-10"
+        border border-gray-300 rounded-lg py-2 px-4 block w-7/12 appearance-none leading-normal "
 				type="text"
 				value={text}
 				placeholder="search..."
 				onChange={(e) => setText(e.target.value)}
 			/>
 			<button
-				className="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10"
+				className="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-10 "
 				onClick={() => refetch()}
 			>
 				Search
