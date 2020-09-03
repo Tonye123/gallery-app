@@ -12,7 +12,7 @@ export const Pictures = () => {
 					className="bg-gray-400 rounded w-auto shadow-md overflow-hidden"
 				>
 					<img
-						className="object-contain"
+						className="object-contain w-full"
 						src={item.webformatURL}
 						alt="bowl of curry"
 					/>
