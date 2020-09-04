@@ -26,22 +26,24 @@ export const Search = () => {
 	}, [isLoading]);
 
 	return (
-		<div className="md:flex mt-10 justify-center">
-			<input
-				className="bg-white focus:outline-none focus:shadow-outline 
-        border border-gray-300 rounded-lg py-2 px-4 block w-7/12 appearance-none leading-normal "
-				type="text"
-				value={text}
-				placeholder="search..."
-				onChange={(e) => setText(e.target.value)}
-			/>
-			<button
-				className="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-10 "
-				onClick={() => refetch()}
-			>
-				Search
-			</button>
-			{error && <p> {error.message}</p>}
-		</div>
+		<section className="pt-10" relative>
+			<div className="md:flex justify-center">
+				<input
+					className="bg-white focus:outline-none focus:shadow-outline 
+        border border-gray-300 rounded-lg py-2 px-4 block w-7/12 appearance-none leading-normal relative"
+					type="text"
+					value={text}
+					placeholder="search..."
+					onChange={(e) => setText(e.target.value)}
+				/>
+				<button
+					className="block relative bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-10 "
+					onClick={() => refetch()}
+				>
+					Search
+				</button>
+				{error && <p> {error.message}</p>}
+			</div>
+		</section>
 	);
 };

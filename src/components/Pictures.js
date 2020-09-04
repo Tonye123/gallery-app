@@ -5,7 +5,7 @@ export const Pictures = () => {
 	const { pictures } = useContext(PicturesContext);
 
 	return (
-		<div className="grid md:grid-cols-3 mx-10 mt-10 gap-8">
+		<div className="grid md:grid-cols-3 mx-10 mt-10 gap-8 relative">
 			{pictures.length === 0 ? (
 				<h1 className="text-5xl">No Images</h1>
 			) : (

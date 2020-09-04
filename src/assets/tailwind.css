@@ -5,3 +5,8 @@
 body {
 	@apply bg-gray-200;
 }
+
+.negative-top-right {
+	top: -10rem;
+	right: -20rem;
+}

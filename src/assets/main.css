@@ -18649,6 +18649,11 @@ body {
   background-color: rgba(237, 242, 247, var(--bg-opacity));
 }
 
+.negative-top-right {
+  top: -10rem;
+  right: -20rem;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
